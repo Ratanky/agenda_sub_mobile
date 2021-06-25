@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+//import 'package:url_launcher/url_launcher.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -246,7 +247,8 @@ class Event1 {
   var date = DateTime.utc(2020, 9, 10);
   var type = "Comida";
   var place = "Av. Dom Aguirre, 158";
-  var image = "assets/Pizza.jpg";
+  var image =
+      "https://diariodorio.com/wp-content/uploads/2020/07/daleopizzaria_20200710_144435_0.jpg";
   var time = "19:00";
   var phone = "1548798521";
   var describe =
@@ -258,7 +260,8 @@ class Event2 {
   var date = DateTime.utc(1983, 8, 6);
   var type = "Cinema";
   var place = "Shopping Iguatemi - Cineflix";
-  var image = "assets/SW_VI.jpg";
+  var image =
+      "https://intratecal.files.wordpress.com/2010/11/star-wars-return-of-the-jedi.jpg";
   var phone = "1525874896";
   var time = "22:00";
 
@@ -274,6 +277,12 @@ class PagEvento1 extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(),
       body: Container(
+        decoration: BoxDecoration(
+            image: DecorationImage(
+                colorFilter: ColorFilter.mode(
+                    Colors.black.withOpacity(0.25), BlendMode.dstATop),
+                image: NetworkImage(Event1().image),
+                fit: BoxFit.cover)),
         padding: EdgeInsets.only(left: 40, right: 40),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -329,6 +338,12 @@ class PagEvento2 extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(),
       body: Container(
+        decoration: BoxDecoration(
+            image: DecorationImage(
+                colorFilter: ColorFilter.mode(
+                    Colors.black.withOpacity(0.25), BlendMode.dstATop),
+                image: NetworkImage(Event2().image),
+                fit: BoxFit.cover)),
         padding: EdgeInsets.only(left: 40, right: 40),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
