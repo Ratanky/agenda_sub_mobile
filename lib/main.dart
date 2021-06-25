@@ -294,7 +294,25 @@ class PagEvento1 extends StatelessWidget {
             Text(Event1().describe),
             Padding(padding: EdgeInsets.only(top: 50)),
             Row(
-              children: [],
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                ElevatedButton(
+                    child: Icon(Icons.location_on_rounded, color: Colors.white),
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(shape: new CircleBorder())),
+                ElevatedButton(
+                    child: Icon(Icons.mail_rounded, color: Colors.white),
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(shape: new CircleBorder())),
+                ElevatedButton(
+                    child: Icon(Icons.local_phone_rounded, color: Colors.white),
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(shape: new CircleBorder())),
+                ElevatedButton(
+                    child: Icon(Icons.web_rounded, color: Colors.white),
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(shape: new CircleBorder())),
+              ],
             )
           ],
         ),
@@ -331,7 +349,24 @@ class PagEvento2 extends StatelessWidget {
             Text(Event2().describe),
             Padding(padding: EdgeInsets.only(top: 50)),
             Row(
-              children: [],
+              children: [
+                ElevatedButton(
+                    child: Icon(Icons.location_on_rounded, color: Colors.white),
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(shape: new CircleBorder())),
+                ElevatedButton(
+                    child: Icon(Icons.mail_rounded, color: Colors.white),
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(shape: new CircleBorder())),
+                ElevatedButton(
+                    child: Icon(Icons.local_phone_rounded, color: Colors.white),
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(shape: new CircleBorder())),
+                ElevatedButton(
+                    child: Icon(Icons.web_rounded, color: Colors.white),
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(shape: new CircleBorder())),
+              ],
             )
           ],
         ),
