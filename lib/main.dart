@@ -274,8 +274,9 @@ class PagEvento1 extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(),
       body: Container(
+        padding: EdgeInsets.only(left: 40, right: 40),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Icon(
               Icons.fastfood_rounded,
@@ -310,14 +311,10 @@ class PagEvento2 extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(),
       body: Container(
-        /*decoration: BoxDecoration(
-            image: DecorationImage(
-          image: AssetImage(Event2().image),
-          fit: BoxFit.cover,
-        ),),*/
+        padding: EdgeInsets.only(left: 40, right: 40),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            //new Image.asset(Event2().image),
             Icon(
               Icons.local_movies,
               color: Colors.blue,
