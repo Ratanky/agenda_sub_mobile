@@ -40,10 +40,10 @@ class _HomeState extends State<Home> {
           padding: EdgeInsets.zero,
           children: <Widget>[
             DrawerHeader(
-              child: Row(
+              child: Column(
                 children: [
                   Text("180886 - Agenda"),
-                  Text("Rene do Nascimento Correa")
+                  Text("\nRene do Nascimento Correa"),
                 ],
               ),
             )
@@ -136,39 +136,91 @@ class _HomeState extends State<Home> {
             ),
             Column(
               children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    Column(
-                      children: <Widget>[
-                        Text(
-                          DateFormat('MMM').format(Event1().date),
-                          style: TextStyle(fontSize: 14),
-                        ),
-                        Text(
-                          Event1().date.day.toString(),
-                          style: TextStyle(fontSize: 30),
-                        ),
-                        Text(
-                          DateFormat('EEEE').format(Event1().date),
-                          style: TextStyle(fontSize: 14),
-                        ),
-                      ],
-                    ),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(Event1().title, style: TextStyle(fontSize: 15)),
-                        Text(Event1().place,
-                            style: TextStyle(
-                                fontSize: 14, fontStyle: FontStyle.italic)),
-                        Text(Event1().time, style: TextStyle(fontSize: 14))
-                      ],
-                    ),
-                    Icon(Icons.fastfood_rounded, color: Colors.blue),
-                    Icon(Icons.keyboard_arrow_right_outlined,
-                        color: Colors.blue),
-                  ],
+                Container(
+                  color: Colors.white,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Column(
+                        children: <Widget>[
+                          Text(
+                            DateFormat('MMM').format(Event1().date),
+                            style: TextStyle(fontSize: 14),
+                          ),
+                          Text(
+                            Event1().date.day.toString(),
+                            style: TextStyle(fontSize: 30),
+                          ),
+                          Text(
+                            DateFormat('EEEE').format(Event1().date),
+                            style: TextStyle(fontSize: 14),
+                          ),
+                        ],
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(Event1().title, style: TextStyle(fontSize: 15)),
+                          Text(Event1().place,
+                              style: TextStyle(
+                                  fontSize: 14, fontStyle: FontStyle.italic)),
+                          Text(Event1().time, style: TextStyle(fontSize: 14))
+                        ],
+                      ),
+                      Icon(Icons.fastfood_rounded, color: Colors.blue),
+                      ElevatedButton(
+                        onPressed: () {},
+                        child: Icon(Icons.keyboard_arrow_right_outlined,
+                            color: Colors.blue),
+                        style: ButtonStyle(
+                            backgroundColor:
+                                MaterialStateProperty.all(Colors.white)),
+                      )
+                    ],
+                  ),
+                ),
+                Container(
+                  color: Colors.blue,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Column(
+                        children: <Widget>[
+                          Text(
+                            DateFormat('MMM').format(Event2().date),
+                            style: TextStyle(fontSize: 14),
+                          ),
+                          Text(
+                            Event2().date.day.toString(),
+                            style: TextStyle(fontSize: 30),
+                          ),
+                          Text(
+                            DateFormat('EEEE').format(Event2().date),
+                            style: TextStyle(fontSize: 14),
+                          ),
+                        ],
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(Event2().title, style: TextStyle(fontSize: 15)),
+                          Text(Event2().place,
+                              style: TextStyle(
+                                  fontSize: 14, fontStyle: FontStyle.italic)),
+                          Text(Event2().time, style: TextStyle(fontSize: 14))
+                        ],
+                      ),
+                      Icon(Icons.local_movies, color: Colors.white),
+                      ElevatedButton(
+                        onPressed: () {},
+                        child: Icon(Icons.keyboard_arrow_right_outlined,
+                            color: Colors.white),
+                        style: ButtonStyle(
+                            backgroundColor:
+                                MaterialStateProperty.all(Colors.blue)),
+                      )
+                    ],
+                  ),
                 )
               ],
             ),
@@ -185,6 +237,8 @@ class Event1 {
   var type = "Comida";
   var place = "Av. Dom Aguirre, 158";
   var time = "19:00";
+  var describe =
+      "A casa oferece diversas pizzas tradicionais, especiais e doces, para retirar no balcão ou receber em casa. \nOpções de serviço: Para viagem · Entrega sem contato";
 }
 
 class Event2 {
@@ -193,4 +247,6 @@ class Event2 {
   var type = "Cinema";
   var place = "Shopping Iguatemi - Cineflix";
   var time = "22:00";
+  var describe =
+      "Star Wars: Episode VI - Return of the Jedi — lançado originalmente como Return of the Jedi — é um filme épico/space opera norte-americano de 1983, dirigido por Richard Marquand e escrito por Lawrence Kasdan e George Lucas, com base na história de Lucas, com Lucas como produtor executivo. Cronologicamente, é o sexto filme da saga Star Wars, e o primeiro a utilizar a tecnologia THX.";
 }
