@@ -169,7 +169,12 @@ class _HomeState extends State<Home> {
                       ),
                       Icon(Icons.fastfood_rounded, color: Colors.blue),
                       ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => PagEvento1()));
+                        },
                         child: Icon(Icons.keyboard_arrow_right_outlined,
                             color: Colors.blue),
                         style: ButtonStyle(
@@ -212,7 +217,12 @@ class _HomeState extends State<Home> {
                       ),
                       Icon(Icons.local_movies, color: Colors.white),
                       ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => PagEvento2()));
+                        },
                         child: Icon(Icons.keyboard_arrow_right_outlined,
                             color: Colors.white),
                         style: ButtonStyle(
@@ -236,7 +246,9 @@ class Event1 {
   var date = DateTime.utc(2020, 9, 10);
   var type = "Comida";
   var place = "Av. Dom Aguirre, 158";
+  var image = "assets/Pizza.jpg";
   var time = "19:00";
+  var phone = "1548798521";
   var describe =
       "A casa oferece diversas pizzas tradicionais, especiais e doces, para retirar no balcão ou receber em casa. \nOpções de serviço: Para viagem · Entrega sem contato";
 }
@@ -246,7 +258,87 @@ class Event2 {
   var date = DateTime.utc(1983, 8, 6);
   var type = "Cinema";
   var place = "Shopping Iguatemi - Cineflix";
+  var image = "assets/SW_VI.jpg";
+  var phone = "1525874896";
   var time = "22:00";
+
   var describe =
       "Star Wars: Episode VI - Return of the Jedi — lançado originalmente como Return of the Jedi — é um filme épico/space opera norte-americano de 1983, dirigido por Richard Marquand e escrito por Lawrence Kasdan e George Lucas, com base na história de Lucas, com Lucas como produtor executivo. Cronologicamente, é o sexto filme da saga Star Wars, e o primeiro a utilizar a tecnologia THX.";
+}
+
+class PagEvento1 extends StatelessWidget {
+  const PagEvento1({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(),
+      body: Container(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Icon(
+              Icons.fastfood_rounded,
+              color: Colors.blue,
+              size: 80,
+            ),
+            Text(
+              Event1().title,
+              style: TextStyle(fontSize: 20),
+            ),
+            Text(Event1().place),
+            Text(Event1().phone),
+            Text(DateFormat("HH:mm - dd/MM/yyyy ").format(Event1().date)),
+            Padding(padding: EdgeInsets.only(top: 50)),
+            Text(Event1().describe),
+            Padding(padding: EdgeInsets.only(top: 50)),
+            Row(
+              children: [],
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class PagEvento2 extends StatelessWidget {
+  const PagEvento2({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(),
+      body: Container(
+        /*decoration: BoxDecoration(
+            image: DecorationImage(
+          image: AssetImage(Event2().image),
+          fit: BoxFit.cover,
+        ),),*/
+        child: Column(
+          children: [
+            //new Image.asset(Event2().image),
+            Icon(
+              Icons.local_movies,
+              color: Colors.blue,
+              size: 80,
+            ),
+            Text(
+              Event2().title,
+              style: TextStyle(fontSize: 20),
+            ),
+            Text(Event2().place),
+            Text(Event2().phone),
+            Text(DateFormat("HH:mm - dd/MM/yyyy ").format(Event2().date)),
+            Padding(padding: EdgeInsets.only(top: 50)),
+            Text(Event2().describe),
+            Padding(padding: EdgeInsets.only(top: 50)),
+            Row(
+              children: [],
+            )
+          ],
+        ),
+      ),
+    );
+  }
 }
